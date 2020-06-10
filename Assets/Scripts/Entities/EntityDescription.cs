@@ -10,4 +10,6 @@ public class EntityDescription : ScriptableObject
     public Sprite sprite;
     public GameObject prefab;
     public bool collectable;
+    public bool npcSpawner;
+    public NPCDescription npc;
 }

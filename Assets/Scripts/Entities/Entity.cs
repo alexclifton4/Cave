@@ -11,5 +11,12 @@ public class Entity : MonoBehaviour
     {
         // Set properties from description
         GetComponent<SpriteRenderer>().sprite = description.sprite;
+
+        // If this is a spawner, spawn an NPC
+        if (description.npcSpawner) {
+            GameObject npc = Instantiate(description.npc.prefab);
+            npc.GetComponent<NPC>().description = description.npc;
+            npc.transform.position = transform.position;
+        }
     }
 }

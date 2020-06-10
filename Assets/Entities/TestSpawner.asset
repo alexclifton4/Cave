@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c30f7aaf88322e8479166127a508f777, type: 3}
+  m_Name: TestSpawner
+  m_EditorClassIdentifier: 
+  name: 
+  description: 
+  sprite: {fileID: -5062486230716756072, guid: abe3e8990cf8ef14c936c29abccfd0f7, type: 3}
+  prefab: {fileID: 2000362471644369602, guid: c19bf7a2c7abbbf41820f4b49b7f575d, type: 3}
+  collectable: 0
+  npcSpawner: 1
+  npc: {fileID: 11400000, guid: 3ad2441866248d547bb32e4ac77ab93e, type: 2}
