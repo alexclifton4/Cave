@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         // Only update inputs if playing
-        if (GameManager.Playing)
+        if (GameManager.Instance.Playing)
         {
             movement = Vector2.zero;
 
@@ -52,7 +52,7 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         // Only add force if the game is playing
-        if (GameManager.Playing)
+        if (GameManager.Instance.Playing)
         {
             rb.AddForce(movement);
         }
@@ -69,8 +69,7 @@ public class PlayerController : MonoBehaviour
         {
             // Add to inventory and delete it from scene
             inventory.Add(entity.description);
-            EntityGenerator.entities.Remove(entity.gameObject);
-            Destroy(entity.gameObject);
+            entity.Remove();
         }
     }
 

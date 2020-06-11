@@ -8,9 +8,10 @@ public class CheatMenu : MonoBehaviour
 	public GameObject fog;
 
 	private bool showCheats = false;
+	private bool showSeed = false;
 
 	// Draws the menu
-	private void OnGUI()
+	void OnGUI()
 	{
 		// See if the menu should be shown
 		if (showCheats)
@@ -32,6 +33,13 @@ public class CheatMenu : MonoBehaviour
 			{
 				GameManager.Instance.EndGame(true);
 			}
+			if (GUI.Button(new Rect(10, 170, 80, 30), "Toggle seed"))
+			{
+				showSeed = !showSeed;
+			}
+			if (GUI.Button(new Rect(10, 210, 150, 30), "Toggle NPC bounds")) {
+                BoundsVisualiser.ToggleBounds();
+			}
 		} else
 		{
 			// Cheat menu not showing, show button
@@ -44,6 +52,12 @@ public class CheatMenu : MonoBehaviour
 					print("Cheat menu opened");
 				}
 			}
+		}
+
+		// Show the seed if the button has been pressed
+		if (showSeed) 
+		{
+			GUI.Label(new Rect(100, 170, 80, 30), GameManager.Instance.seed.ToString());
 		}
 	}
 }

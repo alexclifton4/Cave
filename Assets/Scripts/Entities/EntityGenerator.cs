@@ -8,14 +8,12 @@ public class EntityGenerator : MonoBehaviour
     public Tilemap tilemap;
     public CaveGenerator cave;
 
-    public static List<GameObject> entities;
-
     // Generates entities for a cave
     public void GenerateEntities(EntityDescription[] entitiesToAdd)
     {
-        if (entities == null)
+        if (GameManager.Instance.entities == null)
         {
-            entities = new List<GameObject>();
+            GameManager.Instance.entities = new List<GameObject>();
         }
 
         foreach (EntityDescription entity in entitiesToAdd) {
@@ -26,23 +24,18 @@ public class EntityGenerator : MonoBehaviour
             // Set its properties
             entityObj.transform.position = (Vector2) position;
             entityObj.GetComponent<Entity>().description = entity;
-
-            // Add to list
-            entities.Add(entityObj);
         }
     }
 
     public void ResetEntities()
     {
-        if (entities != null)
+        if (GameManager.Instance.entities != null)
         {
             // Destroy all the entities
-            foreach (GameObject entity in entities)
+            while (GameManager.Instance.entities.Count != 0)
             {
-                Destroy(entity);
+                GameManager.Instance.entities[0].GetComponent<Entity>().Remove();
             }
-
-            entities.Clear();
         }
     }
 }

@@ -1517,6 +1517,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameMode: {fileID: 11400000, guid: fa807140847fd874e94ff9df3f80eb93, type: 2}
   player: {fileID: 221449136}
+  entities: []
+  npcs: []
   tilemap: {fileID: 986978526}
   winScreen: {fileID: 790483120}
   caveGenerator: {fileID: 1056932265}

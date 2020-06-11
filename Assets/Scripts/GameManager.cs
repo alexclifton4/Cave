@@ -1,15 +1,18 @@
-﻿using TMPro;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Tilemaps;
 
 public class GameManager : MonoBehaviour
 {
-    public static bool Playing { get; private set; }
     public static GameManager Instance { get; private set; }
+    public bool Playing { get; private set; }
+    public uint seed { get; private set; }
 
     public GameMode gameMode;
     public PlayerController player;
+    public List<GameObject> entities;
+    public List<GameObject> npcs;
     public Tilemap tilemap;
     public GameObject winScreen;
 
@@ -65,7 +68,7 @@ public class GameManager : MonoBehaviour
         // Seed the RNG
         // Although Unity seeds it automatically, I want to use a known value
         // So that it can be logged and therefore replicated
-        uint seed = (uint)System.DateTime.Now.Ticks;
+        seed = (uint)System.DateTime.Now.Ticks;
 
 #if UNITY_EDITOR
         // Used for debugging within editor

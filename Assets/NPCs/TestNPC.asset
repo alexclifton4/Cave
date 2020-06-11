@@ -15,3 +15,5 @@ MonoBehaviour:
   name: Test
   sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   prefab: {fileID: 2061459812904670433, guid: 4cffda8bcb3320649b1eb5830ebbee64, type: 3}
+  baseRadius: 6
+  detectionRadius: 5

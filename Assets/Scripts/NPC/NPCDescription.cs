@@ -8,4 +8,7 @@ public class NPCDescription : ScriptableObject
     public new string name;
     public Sprite sprite;
     public GameObject prefab;
+
+    public float baseRadius;
+    public float detectionRadius;
 }
